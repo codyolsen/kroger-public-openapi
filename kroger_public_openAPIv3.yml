@@ -21,11 +21,41 @@ info:
     https://developer.kroger.com/reference
   version: 1.0.0
   contact: {}
+components:
+  securitySchemes:
+    OAuth2AuthorizationCode:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.kroger.com/v1/connect/oauth2/authorize
+          # Certificatn authorizationUrl: https://api-ce.kroger.com/v1/connect/oauth2/authorize
+          tokenUrl: https://api.kroger.com/v1/connect/oauth2/token
+          # Certification tokenUrl: https://api-ce.kroger.com/v1/connect/oauth2/token
+          scopes:
+            profile.compact: Grants read access to a customer profile ID.
+            cart.basic:write: Grants write access to a customer's cart.
+            product.compact: Grants read access to general product information.
+            N/A: No scope required.
+
+    OAuth2ClientCreds:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.kroger.com/v1/connect/oauth2/token
+          # Certification tokenUrl: https://api-ce.kroger.com/v1/connect/oauth2/token
+          scopes:
+            product.compact: Grants read access to general product information.
 servers:
-  - url: ''
+  - url: https://api.kroger.com/v1/
+    description: Production server (uses live data)
+  # - url: https://api-ce.kroger.com/v1/
+  # description: Certification Server
 paths:
   /identity/profile:
     get:
+      security:
+        - OAuth2ClientCreds:
+          - profile.compact
       tags:
         - Identity
       summary: User profile information
@@ -167,6 +197,9 @@ paths:
                       timestamp: <number>
   /cart/add:
     put:
+      security:
+        - OAuth2AuthorizationCode:
+          - cart.basic:write
       tags:
         - Cart
       summary: Add to cart
@@ -276,6 +309,11 @@ paths:
                       timestamp: <number>
   /products:
     get:
+      security:
+        - OAuth2AuthorizationCode:
+          - product.compact
+        - OAuth2ClientCreds:
+          - product.compact
       tags:
         - Products
       summary: Product list
@@ -842,6 +880,11 @@ paths:
                       timestamp: <number>
   /products/{id}:
     get:
+      security:
+        - OAuth2AuthorizationCode:
+          - product.compact
+        - OAuth2ClientCreds:
+          - product.compact
       tags:
         - Products
       summary: Product details
@@ -1201,9 +1244,11 @@ paths:
         description: Either the productId or UPC of the product you want returned.
   /locations/{locationId}:
     get:
+      security:
+        - OAuth2AuthorizationCode: []
+        - OAuth2ClientCreds: []
       tags:
         - Locations
-        - Locations1
       summary: Location details
       description: >-
         Provides access to the details of a specific location by using the
@@ -1780,9 +1825,12 @@ paths:
         description: The locationId of the store you want results limited to.
   /locations:
     get:
+      security:
+        - OAuth2AuthorizationCode: []
+        - OAuth2ClientCreds: []
+
       tags:
         - Locations
-        - Locations1
       summary: Location list
       description: >-
         Provides access to a list of locations matching a given criteria. If the
@@ -2752,6 +2800,10 @@ paths:
                       timestamp: <number>
   /chains:
     get:
+      security:
+        - OAuth2AuthorizationCode: []
+        - OAuth2ClientCreds: []
+
       tags:
         - Locations
         - Chains
@@ -2898,6 +2950,10 @@ paths:
                       timestamp: <number>
   /chains/{name}:
     get:
+      security:
+        - OAuth2AuthorizationCode: []
+        - OAuth2ClientCreds: []
+
       tags:
         - Locations
         - Chains
@@ -3008,6 +3064,9 @@ paths:
           endpoint as "chain".
   /departments:
     get:
+      security:
+        - OAuth2AuthorizationCode: []
+        - OAuth2ClientCreds: []
       tags:
         - Locations
         - Departments
@@ -3280,6 +3339,5 @@ tags:
 
 
       Public Rate Limit: 1,600 a day per endpoint
-  - name: Locations1
   - name: Chains
   - name: Departments
