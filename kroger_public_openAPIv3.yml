@@ -85,13 +85,13 @@ paths:
                         type: object
                         properties:
                           limit:
-                            type: string
+                            type: number
                             example: <number>
                           start:
-                            type: string
+                            type: number
                             example: <number>
                           total:
-                            type: string
+                            type: number
                             example: <number>
                       warnings:
                         type: array
@@ -153,7 +153,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Forbidden:
@@ -186,7 +186,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -298,7 +298,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -519,10 +519,10 @@ paths:
                                 type: object
                                 properties:
                                   promo:
-                                    type: string
+                                    type: number
                                     example: <number>
                                   regular:
-                                    type: string
+                                    type: number
                                     example: <number>
                               size:
                                 type: string
@@ -682,13 +682,13 @@ paths:
                         type: object
                         properties:
                           limit:
-                            type: string
+                            type: number
                             example: <number>
                           start:
-                            type: string
+                            type: number
                             example: <number>
                           total:
-                            type: string
+                            type: number
                             example: <number>
                       warnings:
                         type: array
@@ -872,7 +872,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -1037,10 +1037,10 @@ paths:
                               type: object
                               properties:
                                 promo:
-                                  type: string
+                                  type: number
                                   example: <number>
                                 regular:
-                                  type: string
+                                  type: number
                                   example: <number>
                             size:
                               type: string
@@ -1079,13 +1079,13 @@ paths:
                         type: object
                         properties:
                           limit:
-                            type: string
+                            type: number
                             example: <number>
                           start:
-                            type: string
+                            type: number
                             example: <number>
                           total:
-                            type: string
+                            type: number
                             example: <number>
                       warnings:
                         type: array
@@ -1173,7 +1173,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Bad Request:
@@ -1228,7 +1228,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -1473,10 +1473,10 @@ paths:
                             type: string
                             example: <string>
                           latitude:
-                            type: string
+                            type: number
                             example: <number>
                           longitude:
-                            type: string
+                            type: number
                             example: <number>
                       hours:
                         type: object
@@ -1593,13 +1593,13 @@ paths:
                         type: object
                         properties:
                           limit:
-                            type: string
+                            type: number
                             example: <number>
                           start:
-                            type: string
+                            type: number
                             example: <number>
                           total:
-                            type: string
+                            type: number
                             example: <number>
                       warnings:
                         type: array
@@ -1754,7 +1754,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Bad Request:
@@ -1809,7 +1809,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -2126,10 +2126,10 @@ paths:
                               type: string
                               example: <string>
                             latitude:
-                              type: string
+                              type: number
                               example: <number>
                             longitude:
-                              type: string
+                              type: number
                               example: <number>
                         hours:
                           type: object
@@ -2479,13 +2479,13 @@ paths:
                         type: object
                         properties:
                           limit:
-                            type: string
+                            type: number
                             example: <number>
                           start:
-                            type: string
+                            type: number
                             example: <number>
                           total:
-                            type: string
+                            type: number
                             example: <number>
                       warnings:
                         type: array
@@ -2792,7 +2792,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -2853,13 +2853,13 @@ paths:
                         type: object
                         properties:
                           limit:
-                            type: string
+                            type: number
                             example: <number>
                           start:
-                            type: string
+                            type: number
                             example: <number>
                           total:
-                            type: string
+                            type: number
                             example: <number>
                       warnings:
                         type: array
@@ -2942,7 +2942,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -3045,7 +3045,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -3109,13 +3109,13 @@ paths:
                         type: object
                         properties:
                           limit:
-                            type: string
+                            type: number
                             example: <number>
                           start:
-                            type: string
+                            type: number
                             example: <number>
                           total:
-                            type: string
+                            type: number
                             example: <number>
                       warnings:
                         type: array
@@ -3180,7 +3180,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
@@ -3243,7 +3243,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Bad Request:
@@ -3298,7 +3298,7 @@ paths:
                         type: string
                         example: <string>
                       timestamp:
-                        type: string
+                        type: number
                         example: <number>
               examples:
                 Internal Server Error:
